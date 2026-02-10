@@ -37,7 +37,7 @@ class _ProductListState extends State<ProductList> {
   Future<void> fetchProducts() async {
     try {
       final response = await http.get(
-        Uri.parse('http://localhost/flutter_product_image/php.api/show_data.php'),
+        Uri.parse('http://localhost/flutter_product_travel/php.api/show_data.php'),
       );
       if (response.statusCode == 200) {
         setState(() {
@@ -65,7 +65,7 @@ class _ProductListState extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Product List')), // แถบหัวข้อ
+      appBar: AppBar(title: const Text('travel List')), // แถบหัวข้อ
       body: Column(
         children: [
           // ช่องค้นหาสินค้า
@@ -74,7 +74,7 @@ class _ProductListState extends State<ProductList> {
             child: TextField(
               controller: searchController,
               decoration: const InputDecoration(
-                labelText: 'Search by product name',
+                labelText: 'Search by travel name',
                 prefixIcon: Icon(Icons.search),
               ),
               onChanged: filterProducts, // เรียก filterProducts เมื่อพิมพ์
